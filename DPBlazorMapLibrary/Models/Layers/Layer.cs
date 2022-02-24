@@ -156,6 +156,12 @@ namespace DPBlazorMapLibrary
             return this;
         }
 
+        public async Task<Layer> BindTooltip(string content, TooltipOptions options)
+        {
+            await JsReference.InvokeAsync<IJSObjectReference>(_bindTooltipJsFunction, content, options);
+            return this;
+        }
+
         /// <summary>
         /// Removes the tooltip previously bound with bindTooltip.
         /// </summary>
